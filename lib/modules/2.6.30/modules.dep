@@ -1,0 +1,10 @@
+/lib/modules/2.6.30/kernel/drivers/usb/gadget/g_serial.ko:
+/lib/modules/2.6.30/kernel/drivers/usb/gadget/g_file_storage.ko:
+/lib/modules/2.6.30/kernel/drivers/usb/gadget/g_ether.ko:
+/lib/modules/2.6.30/kernel/drivers/net/wireless/zd1211rw/zd1211rw.ko:
+/lib/modules/2.6.30/kernel/drivers/backlight.ko:
+/lib/modules/2.6.30/kernel/drivers/dmd.ko:
+/lib/modules/2.6.30/kernel/drivers/i2s.ko:
+/lib/modules/2.6.30/kernel/drivers/amp.ko:
+/lib/modules/2.6.30/kernel/drivers/at91gpio.ko:
+

@@ -1,0 +1,230 @@
+#!/bin/sh
+
+# path to game-specific files
+SPIKE_PATH=/usr/local/spike
+GAMES_PATH=/games
+DUMP_PATH=/dump
+LOG_PATH=$DUMP_PATH/log
+
+# link to display processor image
+DISPLAY_LINK=display.hex
+
+# serial device for node bus
+NODEBUS_DEV=/dev/ttyS4
+
+# path to console log file (set to /dev/null if none)
+#CONSOLE_LOG=$LOG_PATH/console.log
+CONSOLE_LOG=/dev/null
+
+#=========== messages =====================
+# indecies for messages to the display
+MSG_START=0
+MSG_NOT_FOUND=1
+
+# messages for alphanumeric display (two displays, eight characters each)
+ALPHA_MSG0="STARTING  GAME  "
+ALPHA_MSG1="     NOTFOUND  "
+
+# messages for dot matrix display (four lines of sixteen characters)
+DOT_MSG0="                 Starting  Game"
+DOT_MSG1="                 Game Not Found"
+
+# display messages.  do nothing for unknown format.
+message() {
+	case $DISPLAY_TYPE in
+		ALPHANUMERIC )
+			eval /usr/local/bin/dprint "\"\$ALPHA_MSG$1\""
+			;;
+		DOTMATRIX )
+			eval /usr/local/bin/dprint "\"\$DOT_MSG$1\""
+			;;
+	esac
+}
+
+# run post_install_hook script from previous installation before doing anything else.
+post_install_hook() {
+	if [ -e /usr/local/spike/post_install_hook.sh ]; then
+		source /usr/local/spike/post_install_hook.sh
+		mount -o remount,rw /
+		rm /usr/local/spike/post_install_hook.sh
+		mount -o remount,ro /
+		sync
+	fi
+}
+
+kernel_update_error() {
+   echo ERROR: $1
+   eval /usr/local/bin/dprint "$1"
+   exit 1
+}
+
+cleanup_kernel_update() {
+	mount -o remount,rw /
+	rm /usr/local/spike/kernel.bin
+	rm /usr/local/spike/kernel.sha1
+	sync
+	mount -o remount,ro /
+	sync
+}
+
+check_and_update_kernel() {
+	if [ -e /usr/local/spike/kernel.bin ]; then
+	   if [ -e /usr/local/spike/kernel.sha1 ]; then
+
+		  EXPECTED_SUM=`cat /usr/local/spike/kernel.sha1` 
+		  echo $EXPECTED_SUM
+		  
+		  FILE_SUM=`sha1sum /usr/local/spike/kernel.bin | awk '{ print $1 }'`
+		  echo $FILE_SUM
+		 
+		  FILE_SIZE=`ls -alL /usr/local/spike/kernel.bin | awk '{ print $5 }'`
+		  echo SIZE: $FILE_SIZE 
+		  
+		  INSTALLED_SUM=`dd if=/dev/mmcblk0p2 bs=${FILE_SIZE} count=1 2>/dev/null | sha1sum | awk '{ print $1 }'`
+		  
+		  echo $INSTALLED_SUM
+		  
+		  if [ "${INSTALLED_SUM}" == "${EXPECTED_SUM}" ]; then
+			 cleanup_kernel_update
+			 echo Kernel up to date.
+			 return 0
+		  fi
+
+		  kill_game
+		  message $MSG_INSTALLING
+		  sleep 1
+	  
+		  if [ "${FILE_SUM}" != "${EXPECTED_SUM}" ]; then
+			 cleanup_kernel_update
+			 kernel_update_error "\"  KERNEL UPDATE   FILE ERROR 1    PLEASE RETRY    KERNEL UPDATE\""  
+		  fi
+	  
+		  for RETRIES in 0 1 2 3 4 5 6 7 8 9 10; do
+			 echo install try: $RETRIES
+			 
+			 COPY_ERROR=0
+			 CHECKSUM_ERROR=0
+			 
+			 dd if=/usr/local/spike/kernel.bin of=/dev/mmcblk0p2
+			 if [ "$?" != 0 ]; then
+				COPY_ERROR=1
+				continue
+			 fi
+			 
+			 sync
+		  
+			 FILE_SIZE=`ls -alL /usr/local/spike/kernel.bin | awk '{ print $5 }'`
+			 INSTALLED_SUM=`dd if=/dev/mmcblk0p2 bs=${FILE_SIZE} count=1 2>/dev/null | sha1sum | awk '{ print $1 }'`
+			 if [ "${INSTALLED_SUM}" != "${EXPECTED_SUM}" ]; then
+				CHECKSUM_ERROR=1
+				continue
+			 fi
+			 
+			 break
+		  done
+		  
+		  if [ "${COPY_ERROR}" != "0" ]; then
+			 kernel_update_error "\"  KERNEL UPDATE ERROR 2  CONTACT STERN SUPPORT    800-542-5377\""
+		  fi 
+		  
+		  if [ "${CHECKSUM_ERROR}" != "0" ]; then
+			 kernel_update_error "\"  KERNEL UPDATE ERROR 3  CONTACT STERN SUPPORT    800-542-5377\""
+		  fi 
+		 
+		  cleanup_kernel_update
+
+		  echo Installation successful. Rebooting
+
+		  message $MSG_UPDATE_COMPLETE_REBOOTING
+		  sync
+		  sleep 1
+		  reboot -f
+		  hang
+	   fi
+	fi
+}
+
+#=============== start here =======================
+
+check_and_update_kernel
+
+post_install_hook
+
+#================================                                                
+# ensure log directory exists on dump partition (can't use /var/log since it's read-only)
+# /var/log should be a link to this
+
+mkdir -p $LOG_PATH                                                          
+
+#================================
+# determine type of display (alphanumeric or dotmatrix) so we can format messages
+# appropiately (don't send messages until after display processor is updated)
+
+DISPLAY_TYPE=`readlink $SPIKE_PATH/$DISPLAY_LINK`
+DISPLAY_TYPE=`basename $DISPLAY_TYPE`
+
+if [[ ${DISPLAY_TYPE:0:9} == dotmatrix ]] ; then
+	DISPLAY_TYPE=DOTMATRIX
+else
+	if [[ ${DISPLAY_TYPE:0:12} == alphanumeric ]] ; then
+		DISPLAY_TYPE=ALPHANUMERIC
+	else
+		DISPLAY_TYPE=UNKNOWN
+	fi
+fi
+
+#================================
+# check if the dot matrix code needs to be updated.  this script expects a link
+# at $SPIKE_PATH/$DISPLAY_LINK which should point to a hex file whose name is properly
+# formatted as "dotmatrix-x_y_z.hex" where x_y_z is the version.
+
+echo "checking dot matrix code version..."
+/usr/local/bin/dotmatrix_install $SPIKE_PATH/$DISPLAY_LINK
+
+#================================
+# check if the network bridge is loaded and has the correct version, update
+# it if it doesn't.  the AVR doesn't have an artful way of including the
+# fuses in a hex file so they're read from a text file and appended to the
+# avrisp command.  the fuse file should contain a single line of text with
+# no newline with just lfuse, hfuse, then efuse in hex (0xaa, etc.).
+# no checking is done other than to ensure the file exists, so the contents
+# of the fuse file must be correct.
+
+FUSE_FILENAME=$SPIKE_PATH/netbridge.fuses
+if [ -f $FUSE_FILENAME ]; then
+	FUSES=`cat $SPIKE_PATH/netbridge.fuses`
+fi
+echo "checking network bridge code version..."
+/usr/local/bin/avrisp $SPIKE_PATH/netbridge.hex $FUSES
+
+#==========================================
+# create /dev/ttyUSB0 if it does not exist
+if [ ! -e "/dev/ttyUSB0" ]; then
+	mount -o remount,rw /
+	mknod /dev/ttyUSB0 c 188 0
+	sync
+	mount -o remount,ro /
+fi
+
+#================================
+# try to launch an application at $GAMES_PATH/game.  this will be a link to the game so
+# that this script doesn't need to change.  redirect stderr messages to log file.
+
+if [ -f $GAMES_PATH/game ]; then
+	echo "starting application..."
+	/etc/init.d/game_monitor $GAMES_PATH/game $CONSOLE_LOG &
+
+	# launch the updater
+	/etc/init.d/update $GAMES_PATH &
+
+elif [ -f /usr/local/spike/spike_menu/game ]; then
+	# run the spike_menu program
+	/usr/local/spike/spike_menu/game &
+else
+	echo "application not found"
+	message $MSG_NOT_FOUND
+	# launch the updater
+	/etc/init.d/update $GAMES_PATH &
+fi
+
+

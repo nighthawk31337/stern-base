@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="desktop">
+                        <dir name="gnome">
+                                <dir name="applications">
+                                        <dir name="component_viewer">
+                                                <entry name="exec">
+                                                        <local_schema short_desc="Aplikasi pelihat komponen default">
+                                                                <longdesc>Aplikasi digunakan untuk melihat fail yang memerlukan komponen untuk melihatnya. Parameter %s akan digantikan dengan URI fail, parameter %c akan digantikan dengan IID komponen.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="terminal">
+                                                <entry name="exec_arg">
+                                                        <local_schema short_desc="Hujah exec bagi terminal default">
+                                                                <longdesc>Hujah exec digunakan bagi palikasi terminal default.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="exec">
+                                                        <local_schema short_desc="Aplikasi terminal default">
+                                                                <longdesc>Aplikasi terminal default untuk digunakan bagi aplikasi yg memerlukan terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                                <dir name="url-handlers">
+                                        <dir name="h323">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;h323&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;h323&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;h323&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;h323&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="callto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;callto&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;callto&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;callto&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;callto&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="aim">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;aim&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;aim&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;aim&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;aim&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="mailto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;mailto&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;mailto&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;mailto&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;mailto&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="https">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;https&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;https&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;https&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;https&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="http">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;http&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;http&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;http&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;http&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="man">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;man&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;man&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;man&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;man&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="info">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;info&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;info&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;info&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;info&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="ghelp">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;ghelp&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;ghelp&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;ghelp&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;ghelp&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="trash">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Laksana program pada terminal">
+                                                                <longdesc>Benar jika arahan digunakan untuk mengendali URL ini patut dilaksanakan pada terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengendali bagi URL &quot;man&quot;">
+                                                                <longdesc>Arahan untuk mengendali  URL &quot;trash&quot; URLs, jika dihidupkan.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Samada arahan dinyatakan patut mengendali mengendali URL &quot;trash&quot;">
+                                                                <longdesc>Benar jika arahan dinyatakan pada kekunci &quot;command&quot; mengendali URL &quot;trash&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+                <dir name="system">
+                        <dir name="smb">
+                                <entry name="workgroup">
+                                        <local_schema short_desc="Kumpulankerja SMB">
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="proxy">
+                                <entry name="autoconfig_url">
+                                        <local_schema short_desc="URL konfigurasi proksi automatik">
+                                                <longdesc>URL yg membekalkan nilai konfigurasi proksi.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_port">
+                                        <local_schema short_desc="Liang proksi SOCKS">
+                                                <longdesc>Liang pada mesin ditakrifkan oleh &quot;/system/proxy/socks_host&quot; yang anda lalui.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_host">
+                                        <local_schema short_desc="Nama hos proksi SOCKS">
+                                                <longdesc>Nama mesin supaya proksi socks melaluinya.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_port">
+                                        <local_schema short_desc="Liang proksi FTP">
+                                                <longdesc>Liang pada mesin ditakrifkan oleh &quot;/system/proxy/ftp_host&quot; yang anda lalui.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_host">
+                                        <local_schema short_desc="Nama hos proksi FTP">
+                                                <longdesc>Nama mesin supaya proksi FTP melaluinya..</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_port">
+                                        <local_schema short_desc="Liang proksi HTTP selamat">
+                                                <longdesc>Liang pada mesin ditakrifkan oleh &quot;/system/proxy/secure_host&quot; yang anda lalui.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_host">
+                                        <local_schema short_desc="Nama hos proksi HTTP selamat">
+                                                <longdesc>Nama mesin supaya proksi HTTP selamat melaluinya.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="mode">
+                                        <local_schema short_desc="Mod konfigurasi proksi">
+                                                <longdesc>Pilih mod konfigurasi proksi. Nilai disokong adalah &quot;none&quot;, &quot;manual&quot;, &quot;auto&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="http_proxy">
+                                <entry name="ignore_hosts">
+                                        <local_schema short_desc="Hos pbukan-proksi">
+                                                <longdesc>Kekunci ini mengandungi senarai hos yang disambung secara terus, bukannya melalui proksi (jika ia aktif). Nilai boleh jadi namahos, domain (menggunakan wildcard awalan seperti *.sebol.com), Alamat hos IP (kedua-dua IPv4 dan IPv6) dan alamat rangkaian dengan netmask (seperti 192.168.0.0/24).</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_password">
+                                        <local_schema short_desc="Katalaluan proksi HTTP">
+                                                <longdesc>Katalaluan untuk dihantar sebagai autentikasi bila melakukan pemproksian HTTP</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_user">
+                                        <local_schema short_desc="Namapengguna proksi HTTP">
+                                                <longdesc>Nama pengguna untuk dihantar sebagai autentikasi bila melakukan pemproksian HTTP.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_authentication">
+                                        <local_schema short_desc="Authentikasi sambungan ke pelayan proksi">
+                                        </local_schema>
+                                </entry>
+                                <entry name="port">
+                                        <local_schema short_desc="Liang proksi HTTP">
+                                                <longdesc>Liang pada mesin ditakrifkan oleh &quot;/system/http_proxy/host&quot; yang anda lalui.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="host">
+                                        <local_schema short_desc="Nama hos proksi HTTP">
+                                                <longdesc>Nama mesin supaya proksi HTTP melaluinya..</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_http_proxy">
+                                        <local_schema short_desc="Guna proksi HTTP">
+                                                <longdesc>Hidupkan tetapan proksi bila mengakses HTTP di internet.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="dns_sd">
+                                <entry name="display_local">
+                                        <local_schema short_desc="Bagaimana memapar servis DNS-SD setempat">
+                                                <longdesc>Nilai yang boleh adalah &quot;merged&quot;, &quot;separate&quot; dan &quot;disabled&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

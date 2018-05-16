@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="desktop">
+                        <dir name="gnome">
+                                <dir name="applications">
+                                        <dir name="component_viewer">
+                                                <entry name="exec">
+                                                        <local_schema short_desc="Penampil standar">
+                                                                <longdesc>Aplikasi yang digunakan untuk menampilkan isi file ini. Parameter %s akan disubstitusi dengan URI file ini, dan parameter %c akan digantikan dengan IID komponennya</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="terminal">
+                                                <entry name="exec_arg">
+                                                        <local_schema short_desc="Parameter tambahan untuk terminal standar">
+                                                                <longdesc>Parameter yang akan disampaikan kepada aplikasi terminal itu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="exec">
+                                                        <local_schema short_desc="Aplikasi terminal standar">
+                                                                <longdesc>Aplikasi terminal standar yang akan digunakan bagi semua aplikasi yang membutuhkan terminal</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                                <dir name="url-handlers">
+                                        <dir name="h323">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;h323&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;h232&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;h323&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;h323&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="callto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;callto&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;callto&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;callto&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;callto&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="aim">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;aim&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;aim&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;aim&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;aim&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="mailto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;mailto&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;mailto&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;mailto&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;mailto&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="https">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;https&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;https&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;https&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;https&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="http">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;http&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;http&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;http&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;ghelp&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="man">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;man&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;man&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;man&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;man&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="info">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;info&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;info&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;info&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;info&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="ghelp">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;ghelp&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;ghelp&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;ghelp&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;ghelp&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="trash">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Jalankan program di dalam terminal">
+                                                                <longdesc>Pilih jika URL ini ingin dijalankan lewat sebuah terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Pengatur URL &quot;trash&quot;">
+                                                                <longdesc>Perintah untuk mengatur URL &quot;trash&quot; jika ada.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Pilih jika perintah ini dapat mengatur URL &quot;trash&quot;">
+                                                                <longdesc>Pilih jika ingin memasang program pengatur URL &quot;trash&quot; pada bagian &quot;command&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+                <dir name="system">
+                        <dir name="smb">
+                                <entry name="workgroup">
+                                        <local_schema short_desc="Workgroup SMB">
+                                                <longdesc>Kelompok kerja jaringan Windows atau ranah tempat pengguna berada. Pengguna sebaiknya keluar dan masuk kembali ke jaringan agar dapat diterima pada kelompok kerja.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="proxy">
+                                <entry name="autoconfig_url">
+                                        <local_schema short_desc="URL konfigurasi proksi otomatis">
+                                                <longdesc>URL yang memberikan konfigurasi proxy.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_port">
+                                        <local_schema short_desc="Port proksi SOCKS">
+                                                <longdesc>Port proksi yang digunakan oleh komputer yang tercantum pada &quot;/system/proxy/socks_host&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_host">
+                                        <local_schema short_desc="Nama komputer proxy SOCKS">
+                                                <longdesc>Nama komputer yang hendak menggunakan proksi socks</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_port">
+                                        <local_schema short_desc="Port proksi FTP">
+                                                <longdesc>Port proksi yang digunakan oleh komputer yang tercantum pada &quot;/system/proxy/ftp_host&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_host">
+                                        <local_schema short_desc="Nama komputer proksi FTP">
+                                                <longdesc>Nama komputer yang hendak menggunakan proksi FTP</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_port">
+                                        <local_schema short_desc="Port proksi HTTP Secure">
+                                                <longdesc>Port proksi yang digunakan oleh komputer yang tercantum pada &quot;/system/proxy/secure_host&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_host">
+                                        <local_schema short_desc="Nama komputer proksi HTTP Secure">
+                                                <longdesc>Nama komputer yang hendak menggunakan proksi HTTP secure</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="mode">
+                                        <local_schema short_desc="Modus konfigurasi proksi">
+                                                <longdesc>Pilihlah modus konfigurasi yang digunakan. Pilih antara &quot;none&quot;, &quot;manual&quot;, atau &quot;auto&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="http_proxy">
+                                <entry name="ignore_hosts">
+                                        <local_schema short_desc="Host non-proksi">
+                                                <longdesc>Ini berisi daftar komputer yang akan terhubung langsung ke tujuan tanpa melalui proksi. Silakan isi dengan nama komputer, nama domain (gunakan wildcard semisal *.foo.com), alamat IP (boleh IPv4 atau IPv6), atau alamat jaringan lengkap dengan netmask (misalnya 192.168.0.0/24).</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_password">
+                                        <local_schema short_desc="Kata sandi pada proksi HTTP">
+                                                <longdesc>Kata sandi yang digunakan untuk melakukan otentikasi proksi HTTP.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_user">
+                                        <local_schema short_desc="Nama pemakai pada proksi HTTP">
+                                                <longdesc>Nama pemakai yang digunakan untuk otentikasi proksi HTTP</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_authentication">
+                                        <local_schema short_desc="Lakukan otentikasi pada koneksi server proksi">
+                                                <longdesc>Pilih jika ingin menggunakan otentikasi pada server proksi. Kolom nama pemakai dan kata sandinya silakan di set pada &quot;/system/http_proxy/authentication_user&quot; dan &quot;/system/http_proxy/authentication_password&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="port">
+                                        <local_schema short_desc="Port proksi HTTP">
+                                                <longdesc>Port proksi yang digunakan oleh komputer yang tercantum pada &quot;/system/http_proxy/host&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="host">
+                                        <local_schema short_desc="Nama komputer proksi HTTP">
+                                                <longdesc>Nama komputer yang hendak menggunakan proksi HTTP</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_http_proxy">
+                                        <local_schema short_desc="Gunakan proksi HTTP">
+                                                <longdesc>Aktifkan proksi saat mengakses HTTP lewat Internet.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="dns_sd">
+                                <entry name="extra_domains">
+                                        <local_schema short_desc="Ranah tambahan yang dicari layanan DNS SD">
+                                                <longdesc>Daftar ranah DNS SD (dibatasi koma) yang seharusnya nampak pada lokasi &quot;network:///&quot;</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="display_local">
+                                        <local_schema short_desc="Penampakan layanan DNS SD lokal">
+                                                <longdesc>Nilai yang mungkin: &quot;merged&quot;, &quot;separate&quot; dan &quot;disabled&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

@@ -1,0 +1,4 @@
+MAJOR=`cat /proc/devices |grep hx170|cut -f1 -d\ `
+mknod /dev/hx170 c $MAJOR 0
+MAJOR=`cat /proc/devices |grep memalloc|cut -f1 -d\ `
+mknod /dev/memalloc c $MAJOR 0

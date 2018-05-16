@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while [ true ] ;
+do
+	$1
+	eval /usr/local/bin/dprint "\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RESTARTING\ \ \ \ \ \ \ \ \ GAME"
+	sleep 1
+done

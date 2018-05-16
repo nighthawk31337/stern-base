@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="desktop">
+                        <dir name="gnome">
+                                <dir name="applications">
+                                        <dir name="component_viewer">
+                                                <entry name="exec">
+                                                        <local_schema short_desc="Privzet pregledovalnik komponent:">
+                                                                <longdesc>Program za pregledovanje datotek, ki za ogled zahtevajo komponento. Parameter %s bo zamenjan z URI-jem datoteke, parameter %c pa z IID komponente.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="terminal">
+                                                <entry name="exec_arg">
+                                                        <local_schema short_desc="Argument ukaza za zagon privzetega terminala">
+                                                                <longdesc>Argument ukaza, ki bo uporabljen za zagon privzetega terminala.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="exec">
+                                                        <local_schema short_desc="Privzet terminal:">
+                                                                <longdesc>Privzet terminal za uporabo programov, ki potrebujejo terminal.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                                <dir name="url-handlers">
+                                        <dir name="h323">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;h323&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;h323&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;h323&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;h323&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="callto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;callto&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;callto&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;callto&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;callto&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="aim">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;aim&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;aim&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;aim&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;aim&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="mailto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;mailto&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;mailto&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;mailto&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;mailto&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="https">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;https&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;https&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;https&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;https&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="http">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;http&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;http&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;http&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;http&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="man">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;man&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;man&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;man&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;man&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="info">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;info&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;info&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;info&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;info&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="ghelp">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;ghelp&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;ghelp&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;ghelp&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;ghelp&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="trash">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="Poženi ukaz v terminalu">
+                                                                <longdesc>Ali naj se ukaz za upravljanje z URL-ji te vrste zažene v terminalu.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="Upravljač URL-jev &quot;trash&quot;">
+                                                                <longdesc>Ukaz za upravljanje URI-jev &quot;trash&quot;, če je omogočeno.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="Ali naj naveden ukaz upravlja URL-je &quot;trash&quot;">
+                                                                <longdesc>Ali naj ukaz naveden v ključu &quot;command&quot; upravlja z URI-ji &quot;trash&quot;.</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+                <dir name="system">
+                        <dir name="smb">
+                                <entry name="workgroup">
+                                        <local_schema short_desc="Delovna skupina SMB">
+                                                <longdesc>Delovna skupina ali domena omrežja Windows, katere del je uporabnik. Za uveljavitev nastavitev nove delovne skupine bo morda potrebna ponovna prijava.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="proxy">
+                                <entry name="autoconfig_url">
+                                        <local_schema short_desc="URL za samodejno nastavitev posredovalnega strežnika">
+                                                <longdesc>URL z vrednostmi za nastavitve posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_port">
+                                        <local_schema short_desc="Vrata posredovalnega strežnika SOCKS">
+                                                <longdesc>Vrata računalnika, ki jih določa &quot;/system/proxy/socks_host&quot; posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_host">
+                                        <local_schema short_desc="Ime gostitelja posredovalnega strežnika SOCKS">
+                                                <longdesc>Ime računalnika posredovalnega strežnika SOCKS.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_port">
+                                        <local_schema short_desc="Vrata FTP posredovalnega strežnika">
+                                                <longdesc>Vrata računalnika, ki jih določa &quot;/system/proxy/ftp_host&quot; posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_host">
+                                        <local_schema short_desc="Ime gostitelja FTP posredovalnega strežnika">
+                                                <longdesc>Ime računalnika FTP posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_port">
+                                        <local_schema short_desc="Vrata varnega posredovalnega strežnika HTTP">
+                                                <longdesc>Vrata računalnika, ki jih določa &quot;/system/proxy/secure_host&quot; posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_host">
+                                        <local_schema short_desc="Ime gostitelja varnega posredovalnega strežnika HTTP">
+                                                <longdesc>Ime računalnika varnega HTTP posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="mode">
+                                        <local_schema short_desc="Način nastavitev posredovalnega strežnika">
+                                                <longdesc>Izberite način nastavitev posredovalnega strežnika. Podprte vrednosti so &quot;brez&quot;, &quot;ročno&quot;, &quot;samodejno&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="http_proxy">
+                                <entry name="ignore_hosts">
+                                        <local_schema short_desc="Gostitelj brez posredovalnega strežnika">
+                                                <longdesc>Ta ključ vsebuje seznam gostiteljev, s katerimi se vzpostavi neposredna povezava in preko posredovalnega strežnika (če je dejaven). Vrednosti so lahko imena gostiteljev, domene (z nadomestnimi znaki kot je *.foo.com), naslovi IP gostitelja (tako IPv4 kot tudi IPv6) in omrežni naslovi z omrežno masko (npr. 192.168.0.0/24).</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_password">
+                                        <local_schema short_desc="Geslo HTTP posredovalnega strežnika">
+                                                <longdesc>Geslo za overitev HTTP posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_user">
+                                        <local_schema short_desc="Uporabniško ime HTTP posredovalnega strežnika">
+                                                <longdesc>Uporabniško ime za overitev HTTP posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_authentication">
+                                        <local_schema short_desc="Overi povezave posredovalnih strežnikov">
+                                                <longdesc>Možnost določa zahtevo za overitev povezave na posredovalni strežnik. Spustno polje za uporabniško ime in geslo določata &quot;/system/http_proxy/authentication_user&quot; in &quot;/system/http_proxy/authentication_password&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="port">
+                                        <local_schema short_desc="Vrata HTTP posredovalnega strežnika">
+                                                <longdesc>Vrata računalnika, ki jih določa &quot;/system/http_proxy/host&quot; posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="host">
+                                        <local_schema short_desc="Ime gostitelja HTTP posredovalnega strežnika">
+                                                <longdesc>Ime računalnika HTTP posredovalnega strežnika.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_http_proxy">
+                                        <local_schema short_desc="Uporabi HTTP posredovalni strežnik">
+                                                <longdesc>Omogoči nastavitve posredovalnega strežnika za dostop do HTTP preko interneta.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="dns_sd">
+                                <entry name="extra_domains">
+                                        <local_schema short_desc="Dodatne domene za iskanje storitev DNS-SD">
+                                                <longdesc>Z vejico ločen seznam domen DNS-SD, ki naj bodo vidne na lokaciji &quot;network:///&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="display_local">
+                                        <local_schema short_desc="Kako naj se prikaže lokalna storitev DNS-SD">
+                                                <longdesc>Možne vrednosti so &quot;povezano&quot;, &quot;loči&quot; in &quot;onemogočeno&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

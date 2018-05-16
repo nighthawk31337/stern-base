@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<gconf>
+        <dir name="schemas">
+                <dir name="desktop">
+                        <dir name="gnome">
+                                <dir name="applications">
+                                        <dir name="component_viewer">
+                                                <entry name="exec">
+                                                        <local_schema short_desc="ডিফল্ট কম্পোনেন্ট প্রদর্শক অ্যাপ্লিকেশন">
+                                                                <longdesc>ফাইল প্রদর্শনের জন্য অ্যাপলিকেশনটির একটি কম্পোনেন্ট প্রয়েজন। পরামিতি %s ফাইলের URI দ্বারা পরিবর্তিত হবে, পরামিতি %c পরিবর্তিত হবে কম্পোনেন্টের IID দিয়ে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="terminal">
+                                                <entry name="exec_arg">
+                                                        <local_schema short_desc="ডিফল্ট টার্মিনাল-এর জন্য Exec আর্গুমেন্ট">
+                                                                <longdesc>ডিফল্ট টার্মিনাল-এর জন্য যে Exec আর্গুমেন্ট ব্যবহৃত হবে</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="exec">
+                                                        <local_schema short_desc="ডিফল্ট টার্মিনাল অ্যাপ্লিকেশন">
+                                                                <longdesc>যেসব অ্যাপ্লিকেশনের জন্য টার্মিনাল প্রয়োজন সেগুলোর জন্য ডিফল্ট টার্মিনাল অ্যাপলিকেশন। </longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                                <dir name="url-handlers">
+                                        <dir name="h323">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="h323 ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;h323&quot; URL হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;h323&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;h323&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="callto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="callto ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;callto&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;callto&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;callto&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="aim">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="man ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;aim&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;aim&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;aim&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="mailto">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="mailto ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;mailto&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;mailto&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;mailto&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="https">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="ghelp ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;https&quot; URL হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;https&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;https&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="http">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="ghelp ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;http&quot; URL হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;http&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;http&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="man">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="man ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;man&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;man&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;man&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="info">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="info ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে  &quot;info&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;info&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;info&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="ghelp">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="ghelp ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;ghelp&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;ghelp&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;ghelp&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                        <dir name="trash">
+                                                <entry name="needs_terminal">
+                                                        <local_schema short_desc="কমান্ডটি টার্মিনালে চালাও">
+                                                                <longdesc>যে কমান্ড ব্যবহার করে এ ধরনের URL হ্যান্ডেল করা হবে তা যদি টার্মিনালে রান করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="command">
+                                                        <local_schema short_desc="trash ইউ-আর-এল প্রক্রিয়াকারক">
+                                                                <longdesc>এই কমান্ড ব্যবহৃত হবে &quot;trash&quot; ইউআরএল হ্যান্ডেলিংয়ের জন্য, যদি সক্রিয় থাকে।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                                <entry name="enabled">
+                                                        <local_schema short_desc="উল্লেখিত কমান্ডটি দ্বারা &quot;trash&quot; URL হ্যান্ডেল করা হবে কিনা">
+                                                                <longdesc>যদি &quot;command&quot; কী তে নির্ধারিত কমান্ড ব্যবহার করে &quot;trash&quot; URL হ্যান্ডেল করা হয় তবে এর মান সত্য।</longdesc>
+                                                        </local_schema>
+                                                </entry>
+                                        </dir>
+                                </dir>
+                        </dir>
+                </dir>
+                <dir name="system">
+                        <dir name="smb">
+                                <entry name="workgroup">
+                                        <local_schema short_desc="এস-এম-বি ওয়ার্কগ্রুপ">
+                                                <longdesc>উইন্ডোজ নেটওয়ার্কিং ওয়ার্কগ্রুপ বা ক্ষেত্র ব্যবহারকারী যার অংশ। নতুন ওয়ার্কগ্রুপ এর প্রভাবের জন্য ব্যবহারকারীকে লগ-আউট করে আবার লগ-ইন করতে হতে পারে।</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="proxy">
+                                <entry name="autoconfig_url">
+                                        <local_schema short_desc="স্বয়ংক্রীয় প্রক্সি কনফিগারেশন ইউ-আর-এল">
+                                                <longdesc>যে ইউ-আর-এল এইচ-টি-টি-পি প্রক্সি সম্বন্ধীয় মান সমূহ যোগান দেয়</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_port">
+                                        <local_schema short_desc="SOCKS প্রক্সি পোর্ট">
+                                                <longdesc>মেশিন উল্লেখিত &quot;/system/proxy/socks_host&quot; পোর্ট যার মধ্য দিয়ে প্রক্সি করা হবে।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="socks_host">
+                                        <local_schema short_desc="SOCKS প্রক্সি হোস্ট নাম">
+                                                <longdesc>যে মেশিনের মধ্য দিয়ে সক্স প্রক্সি করা হবে</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_port">
+                                        <local_schema short_desc="এফ-টি-পি  প্রক্সি পোর্ট">
+                                                <longdesc>মেশিন উল্লেখিত &quot;/system/proxy/ftp_host&quot; পোর্ট যার মধ্য দিয়ে প্রক্সি করা হবে।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="ftp_host">
+                                        <local_schema short_desc="এইচ-টি-টি-পি  প্রক্সি হোস্ট নাম">
+                                                <longdesc>যে মেশিনের মধ্য দিয়ে এফ-টি-পি প্রক্সি করা হবে</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_port">
+                                        <local_schema short_desc="নিরাপদ এইচ-টি-টি-পি প্রক্সি পোর্ট">
+                                                <longdesc>মেশিন উল্লেখিত  &quot;/system/proxy/secure_host&quot; পোর্ট যার মধ্য দিয়ে প্রক্সি করা হবে।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="secure_host">
+                                        <local_schema short_desc="নিরাপদ এইচ-টি-টি-পি প্রক্সি হোস্ট নাম">
+                                                <longdesc>যে মেশিনের মধ্য দিয়ে নিরাপদ এইচ-টি-টি-পি প্রক্সি করা হবে</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="mode">
+                                        <local_schema short_desc="প্রক্সি কনফিগারেশন মোড">
+                                                <longdesc>প্রক্সি কনফিগারেশন মোড নির্বাচন করুন। সমর্থিত মনা হচ্ছে  &quot;none&quot;, &quot;manual&quot;, &quot;auto&quot;।</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="http_proxy">
+                                <entry name="ignore_hosts">
+                                        <local_schema short_desc="যে হোস্টের জন্য প্রক্সি ব্যবহৃত হবে না">
+                                                <longdesc>এই কী, হোস্ট তালিকা ধারণ করে যারা প্রক্সি না হয়ে সরাসরি সংযুক্ত (যদি ইহা সক্রিয় থাকে)। মান হতে পারে হোস্টনাম, ক্ষেত্র (যা *.foo.com ধরণের ইনিসিয়াল ওয়াইল্ডকার্ড ব্যবহার করে), আইপি হোস্ট ঠিকানা (IPv4 এবং IPv6 উভয় ধরনের) এবং নেটমাস্ক সহ (১৯২.১৬৮.০.০/২৪ জাতীয়) নেটওয়ার্ক ঠিকানা।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_password">
+                                        <local_schema short_desc="এইচ-টি-টি-পি  প্রক্সি পাসওয়ার্ড">
+                                                <longdesc>HTTP প্রক্সি ব্যবহারের পরিচয় প্রমাণ প্রক্রিয়ার পাসওয়ার্ড।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="authentication_user">
+                                        <local_schema short_desc="এইচ-টি-টি-পি  প্রক্সি ব্যবহারকারী নাম">
+                                                <longdesc>এইচ-টি-টি-পি প্রক্সি ব্যবহার করার সময় যে ব্যবহারকারী নাম ব্যবহৃত হবে</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_authentication">
+                                        <local_schema short_desc="প্রক্সি সার্ভার কানেকশন অথেন্টিকেট করো">
+                                                <longdesc>যদি সত্য থাকে, প্রক্সি সার্ভার সংযোগে পরিচয় প্রমাণ প্রক্রিয়ার প্রয়োজন হবে। ব্যবহারকারীর নাম/পাসওয়ার্ড কম্বো উল্লেখিত হবে &quot;/system/http_proxy/authentication_user&quot; এবং &quot;/system/http_proxy/authentication_password&quot;.</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="port">
+                                        <local_schema short_desc="এইচ-টি-টি-পি  প্রক্সি পোর্ট">
+                                                <longdesc>মেশিন উল্লেখিত &quot;/system/http_proxy/host&quot; পোর্ট যার মধ্য দিয়ে প্রক্সি করা হবে।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="host">
+                                        <local_schema short_desc="এইচ-টি-টি-পি  প্রক্সি হোস্ট নাম">
+                                                <longdesc>যে মেশিনের মধ্য দিয়ে এইচ-টি-টি-পি প্রক্সি করা হবে</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="use_http_proxy">
+                                        <local_schema short_desc="এইচ-টি-টি-পি প্রক্সি ব্যবহার করো">
+                                                <longdesc>ইন্টারনেটের মধ্য দিয়ে এইচ-টি-টি-পি যোগাযোগ স্থাপন করার সময় প্রক্সি সেটিং সক্রীয় করে</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                        <dir name="dns_sd">
+                                <entry name="extra_domains">
+                                        <local_schema short_desc="DNS-SD সার্ভিস খোঁজার জন্য অতিরিক্ত ক্ষেত্রে।">
+                                                <longdesc>DNS-SD ক্ষেত্রের কমা বিচ্ছিন্ন তালিকা দৃশ্যমান হওয়া উচিত &quot;network:///&quot; অবস্থানে।</longdesc>
+                                        </local_schema>
+                                </entry>
+                                <entry name="display_local">
+                                        <local_schema short_desc="কিভাবে স্থানীয় DNS-SD সার্ভিস প্রদর্শন করা হবে">
+                                                <longdesc>সম্ভব মান হচ্ছে &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;।</longdesc>
+                                        </local_schema>
+                                </entry>
+                        </dir>
+                </dir>
+        </dir>
+</gconf>

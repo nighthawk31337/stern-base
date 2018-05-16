@@ -1,0 +1,282 @@
+#!/bin/ash
+
+PROG_NAME=UPDATE
+SRC_MOUNT_POINT="/media"
+USB_FLASH_DRIVES="/dev/sda1 /dev/sda /dev/sdb1 /dev/sdb"
+SPIKE_PATH=/usr/local/spike
+DEST_PATH=$1
+TMP_BASE_DIR="/games/.tmp"
+TMP_DIR="$TMP_BASE_DIR/spk-$$"
+SPKSUM=/usr/local/bin/spksum
+
+#=========== message =====================
+# indicies for messages to the display
+MSG_INSTALLING=0
+MSG_COMPLETE=1
+MSG_COMPLETE_BOOT=2
+MSG_UPDATE_ERROR=3
+MSG_UPDATE_ERROR_RESET=4
+MSG_UPDATE_EXTRACTING=5
+MSG_UPDATE_VERIFYING=6
+MSG_UPDATE_INSTALLING=7
+MSG_UPDATE_FINALIZING=8
+MSG_UPDATE_COMPLETE_REBOOTING=9
+
+# messages for dot matrix display (four lines of sixteen characters)
+#         _23456789012345__23456789012345__23456789012345__23456789012345_
+DOT_MSG0="APPLYING UPDATE   PLEASE WAIT   "
+DOT_MSG1="UPDATE COMPLETE.REMOVE USB FLASH   DRIVE AND      CYCLE POWER."
+DOT_MSG2="UPDATE COMPLETE   CYCLE POWER"
+DOT_MSG3="     UPDATE       UNSUCCESSFUL                    PLEASE WAIT"
+DOT_MSG4="     UPDATE       UNSUCCESSFUL                    CYCLE POWER"
+DOT_MSG5="APPLYING UPDATE   PLEASE WAIT                      EXTRACTING"
+DOT_MSG6="APPLYING UPDATE   PLEASE WAIT                      VERIFYING"
+DOT_MSG7="APPLYING UPDATE   PLEASE WAIT                      INSTALLING"
+DOT_MSG8="APPLYING UPDATE   PLEASE WAIT                      FINALIZING"
+DOT_MSG9="UPDATE COMPLETE   PLEASE WAIT                      REBOOTING"
+
+
+#===== debug messages ============
+PRINT() {
+	echo -e "$PROG_NAME: $1"
+}
+
+#=========== hang =====================
+# hang until reset
+hang() {
+	PRINT "hang, wait for reset"
+	while [ 1 -eq 1 ]
+	do
+		sleep 1
+	done
+}
+
+# display messages.  do nothing for unknown format.
+message() {
+    eval /usr/local/bin/dprint "\"\$DOT_MSG$1\""
+}
+
+update_message() {
+    echo -e $DOT_MSG0 "\"\$DOT_MSG$1\""
+    #eval /usr/local/bin/dprint "\"\$MSG2\""
+}
+
+
+# Returns the absolute file name of the given file
+# getAbsoluteName <file>$DOT_MSG0
+getAbsoluteName() {
+    cd `dirname "$1"`; echo "`pwd`/`basename "$1"`" ; cd - > /dev/null
+}
+
+# Prints an error message
+# error [error message ...]
+error() {
+
+    echo -n "$pname: error: " >&2
+    for arg; do
+        echo -n "$arg" >&2
+    done
+    echo >&2
+
+}
+
+kill_game() {
+    # kill game_monitor and game
+    pkill -f game_monitor
+    pkill game
+
+    # wait until it's gone (game will run under program name "game" since that's the link to it)
+    PID=`pidof game`
+    while [ -n "$PID" ]; do
+	    PID=`pidof game`
+    done
+    PRINT "game killed"
+
+}
+
+get_bytes_available_RETVAL=0
+get_bytes_available() {
+    MOUNT_POINT=$1
+    get_bytes_available_RETVAL=0
+    if [ -d "$MOUNT_POINT" ]; then
+	get_bytes_available_RETVAL=`df -B 1 ${MOUNT_POINT} | tail -n1 | awk '{print $4}'`
+	if [ -z "${get_bytes_available_RETVAL}" ]; then
+	    get_bytes_available_RETVAL=0
+	fi
+    fi
+}
+
+get_bytes_needed_RETVAL=0
+get_bytes_needed() {
+    FULL_FILE_NAME=$1
+    get_bytes_needed_RETVAL=0
+    if [ ! -z "$FULL_FILE_NAME" ] && [ -e "$FULL_FILE_NAME" ]; then
+	CONTENTS=`tar -tvf ${i} 2>&1`
+	if [ $? -eq 0 ]; then
+	    get_bytes_needed_RETVAL=`echo "$CONTENTS" | awk '{bytes += $3} END {print bytes}'`
+	    if [ -z "${get_bytes_needed_RETVAL}" ]; then
+		get_bytes_needed_RETVAL=0
+	    fi
+	fi
+    fi
+}
+
+find_first_valid_update_file_RETVAL=""
+find_first_valid_update_file() {
+    find_first_valid_update_file_RETVAL=""
+    for i in "$SRC_MOUNT_POINT"/*.[sS][pP][kK] ;
+    do
+		if [ -f "$i" ]; then
+			find_first_valid_update_file_RETVAL=${i}
+			return
+		fi
+    done
+}
+
+get_mount_point_RETVAL=""
+get_mount_point() {
+    get_mount_point_RETVAL=""
+    # find the mount point of the destination path (DEST_PATH may or may not be the mount point)
+    DEST_MOUNT_POINT=$1
+    mountpoint -q $DEST_MOUNT_POINT
+    while [ $? -ne 0 ]; do
+	DEST_MOUNT_POINT=`dirname $DEST_MOUNT_POINT`
+	mountpoint -q $DEST_MOUNT_POINT
+    done
+    get_mount_point_RETVAL=$DEST_MOUNT_POINT
+}
+
+
+# Returns whether the given file is a regular file
+# checkRegFile <filename>
+checkRegFile_RETVAL=0
+checkRegFile() {
+    checkRegFile_RETVAL=0
+    if [ ! -e "$1" ]; then
+        error "$1 does not exist!"
+    elif [ -d "$1" ]; then
+        error "$1 is a directory!"
+    elif [ ! -f "$1" ]; then
+        error "$1 is not a regular file!"
+    else
+        # file is a regular filesha1sum
+	checkRegFile_RETVAL=0
+	return
+    fi
+
+    # file is not a regular file
+    checkRegFile_RETVAL=1
+    return
+}
+
+cleanTmp() {
+    if [ -e $TMP_BASE_DIR ]; then
+	rm -rf $TMP_BASE_DIR
+    fi
+}
+
+
+spk_install() {
+	packageFile=$1
+
+	if [ -e /usr/local/spike/spike_menu/game ]; then
+	    /usr/local/spike/spike_menu/game
+	else
+
+	    # remove old tmp directories left over from previous installs
+	    cleanTmp
+
+	    checkRegFile "$packageFile" || { false ; return ; }
+
+	    message $MSG_UPDATE_INSTALLING
+	    /usr/local/bin/spk install $packageFile
+
+	    message $MSG_UPDATE_FINALIZING
+
+	    cleanTmp
+	fi
+
+	return
+}
+
+#================ update ==========================
+update_RETVAL=0
+update() {
+
+    update_RETVAL=0
+    PRINT "searching for update file"
+
+    find_first_valid_update_file
+    FULL_FILE_NAME=$find_first_valid_update_file_RETVAL
+
+    if [ ! -z "$FULL_FILE_NAME" ] && [ -e "$FULL_FILE_NAME" ]; then
+		PRINT "INSTALL $FULL_FILE_NAME"
+
+		kill_game
+
+		get_mount_point $DEST_PATH
+		DEST_MOUNT_POINT=$get_mount_point_RETVAL
+
+		# remount target as read/write, unpack the file, remount as read-only, sync to ensure it writes to the drive
+		PRINT "remount $DEST_MOUNT_POINT read/write"
+		mount -o remount -o rw $DEST_MOUNT_POINT
+		sync
+
+		# message $MSG_INSTALLING
+		PRINT "expand update package"
+		spk_install ${FULL_FILE_NAME}
+
+		update_RETVAL=0
+	
+		PRINT "remount $DEST_MOUNT_POINT read-only"
+		mount -o remount -o ro $DEST_MOUNT_POINT
+		sync
+
+		return
+    fi
+    update_RETVAL=1
+    return
+}
+
+#=============== start here =======================
+#
+# @@@ this blocks the login prompt (can't log in until this is done)
+# @@@ so, this should be forked
+#
+if [ $# -eq 0 ]; then
+	echo "one argument required (destination path)"
+	exit;
+fi
+
+# silently unmount anything that's already there (shouldn't be anything)
+umount $SRC_MOUNT_POINT > /dev/null 2>&1
+
+# look for an update on a flash drive.
+# try 5 times (every three seconds) then quit.
+for a in `seq 1 5`; do
+	# check if we can mount the flash drive read-only, don't print any output
+
+	for FLASH_DRIVE in $USB_FLASH_DRIVES ; do
+		mount -r $FLASH_DRIVE $SRC_MOUNT_POINT > /dev/null 2>&1
+		if [ $? -eq 0 ]; then
+			PRINT "mounted flash drive"
+
+			update
+
+			umount $SRC_MOUNT_POINT
+			if [ $? -eq 0 ]; then
+				PRINT "unmounted flash drive"
+			else
+				PRINT "failed to unmount flash drive"
+			fi
+			if [ $update_RETVAL -eq 0 ]; then
+				message $MSG_COMPLETE
+				hang
+			fi
+		fi
+	done
+	sleep 3
+done
+
+PRINT "no update found, exiting"
+
