@@ -98,7 +98,14 @@ If no nodes respond then CPU responds::
 CPU (node 0) sends::
 UnblockTraffic (8003F0226B00)
 
+lcdinsert.bin (ghostbusters)  
+-------------------------------------------------------------------------------------  
   
+0x200 byte header  
+dword at offset 16 is the sum32-byte hash of the data following the header  
+  
+read in 0x200 bytes at a time and sent to node 24 as four 0x80 byte pages  
+ 
 Spike Menu  
 -------------------------------------------------------------------------------------  
 Sends 2048 Byte Packets on /dev/spi0, (4x 512byte frames, 128x32 @ 1bpp).  
