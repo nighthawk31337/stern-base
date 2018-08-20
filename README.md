@@ -2,7 +2,7 @@
 
 Stern Spike Recovery Image  
   
-Interesting devices:  
+Devices:  
 -------------------------------------------------------------------------------------  
 
 /dev/dmd   - DMD Control
@@ -11,8 +11,8 @@ Interesting devices:
 /dev/i2c-0 - I2C Bus  
 /dev/i2s   - Audio DAC  
 /dev/gpio  - GPIO Pins  
-/dev/amp  
-/dev/adc  
+/dev/amp   - Amplifier control  
+/dev/adc   - Line Voltage Monitor  
 /dev/backlight - Backlight brightness control  
 /dev/ttyS4 - Spike NODEBUS  
   
