@@ -14,7 +14,8 @@ Devices:
 /dev/amp   - Amplifier control  
 /dev/adc   - Line Voltage Monitor  
 /dev/backlight - Backlight brightness control  
-/dev/ttyS4 - Spike NODEBUS  
+/dev/ttyS4 - Spike NODEBUS
+/dev/ttyS3 - lcd display?
   
 Local Switches (/dev/sp1)  
 -------------------------------------------------------------------------------------  
